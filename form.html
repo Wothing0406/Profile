@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      :root {
+  /*in CSS represents the root element of the HTML document, typically the html element. It's used for applying global CSS rules and defining global variables.*/
+  --color-white: #f3f3f3;
+  --color-darkpurple-alpha: rgba(106,90,205,0.6);
+  --color-orange: #FFA07A;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-white);
+  margin: 0;
+}
+body::before {
+  /* in CSS inserts content before the content of the <body> element in HTML, ::before is a pseudo element */
+  content: ''; /* leave empty because don't need a text */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-image: linear-gradient(to right, darkred, transparent), url(./img/background.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+h1 {
+  font-weight: 400;
+  line-height: 1.2;
+}
+ p {
+  font-size: 1.125rem;
+}
+
+h1,
+p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+input,
+button,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button {
+  border: none;
+}
+
+.container {
+  width: 100%;
+  margin: 3.125rem auto 0 auto;
+}
+
+.header {
+  padding: 0 0.625rem;
+  margin-bottom: 1.875rem;
+}
+
+.description {
+  font-style: italic;
+  font-weight: 200;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+/* form */
+ form {
+  background: var(--color-darkpurple-alpha);
+  padding: 2.5rem 0.625rem;
+  border-radius: 0.25rem;
+}
+
+.form-group {
+  margin: 0 auto 1.25rem auto;
+  padding: 0.25rem;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 2.375rem;
+  color: #495057;
+  background-color: #fff;
+  border-radius: 0.25rem;
+}
+
+.input-radio,
+.input-checkbox {
+  display: inline-block;
+  margin-right: 0.625rem;
+  min-height: 1.25rem;
+  min-width: 1.25rem;
+}
+
+.input-textarea {
+  min-height: 120px;
+  width: 100%;
+  resize: vertical;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.75rem ;
+  background: var(--color-orange);
+  color: inherit;
+  border-radius: 2px;
+  cursor: pointer;
+}
+    </style>
+  </head>
+  <body>
+        <h1 id="title">Survey Form</h1>
+        <p id="description">
+          Thank you for taking the time to visit my Website.
+          <br>
+          If you have any questions or problems, please feel free to ask.
+        </p>
+      <form id="survey-form" method="get">
+        <div class="form-group">
+          <label id="name-label" for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="form-control"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="email-label" for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="form-control"
+            placeholder="Enter your Email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="number-label" for="number">Age </label>
+          <input
+            type="number"
+            name="age"
+            id="number"
+            min="15"
+            max="100"
+            class="form-control"
+            placeholder="Optional"
+          />
+        </div>
+
+
+
+<div class="form-group">
+          <p>
+            <p>What kind of main topics do you like watching?</p>
+          </p>
+
+          <label
+            ><input
+              name="main-topics"
+              value="front-end"
+              type="checkbox"
+              class="input-checkbox"
+            />Front-end</label
+          >
+          <label>
+            <input
+              name="main-topics"
+              value="back-end"
+              type="checkbox"
+              class="input-checkbox"
+            />Back-end</label
+          >
+          <label
+            ><input
+              name="main-topics"
+              value="artifical-intelligence"
+              type="checkbox"
+              class="input-checkbox"
+            />Artifical Intelligence (AI)</label
+          >
+          <label
+            ><input
+              name="main-topics"
+              value="ic-design"
+              type="checkbox"
+              class="input-checkbox"
+            />IC Design</label
+          >
+          <label
+            ><input
+              name="main-topics"
+              value="embedded-systems"
+              type="checkbox"
+              class="input-checkbox"
+            />Embedded Systems</label
+          >
+          <label
+            ><input
+              name="main-topics"
+              value="internet-of-things"
+              type="checkbox"
+              class="input-checkbox"
+            />Internet of Things</label
+          >
+          <label
+            ><input
+              name="main-topics"
+              value="others"
+              type="checkbox"
+              class="input-checkbox"
+            />Others:
+            <input
+            type="text"
+            name="main-topics"
+            class="form-control"
+            placeholder="Enter topics you liked"
+            />
+          </label>
+        </div>
+
+
+
+        <div class="form-group">
+          <label for="dropdown">What kind of additional topics do you like watching?</label>
+          <select id="dropdown" name="mainTopic" class="form-control" required>
+            <option disabled selected value>Select</option>
+            <option value="webApp">Graphic Design</option>
+            <option value="microsoftOfficeSpecialist">Microsoft Office Specialist (MOS)</option>
+            <option value="english">English</option>
+            <option value="edit">Edit</option>
+            <option value="math">Math</option>
+          </select>
+        </div>
+
+
+
+
+
+        <div class="form-group">
+          <p>Would you recommend Nguyenkelvin to a friend?</p>
+          <label>
+            <input
+              name="user-recommend"
+              value="definitely"
+              type="radio"
+              class="input-radio"
+              checked
+            />Definitely</label
+          >
+          <label>
+            <input
+              name="user-recommend"
+              value="maybe"
+              type="radio"
+              class="input-radio"
+            />Maybe</label
+          >
+
+          <label
+            ><input
+              name="user-recommend"
+              value="not-sure"
+              type="radio"
+              class="input-radio"
+            />Not sure</label
+          >
+        </div>
+
+        
+
+        
+
+        <div class="form-group">
+          <p>Any questions or suggestions?</p>
+          <textarea
+            id="comments"
+            class="input-textarea"
+            name="comment"
+            placeholder="Enter your comment here..."
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" id="submit" class="submit-button">
+            Submit
+          </button>
+        </div>
+      </form>
+      
+  </body>
+</html>
+
+
+
+
+
+
